@@ -6,7 +6,7 @@ interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
 
 const Button: FC<ButtonProps> = ({children}) => {
   return (
-<button className='bg-gradient-to-br from-s-gradiant to-e-gradiant px-6 py-2 h-[44px] rounded-md text-heading font-medium '> 
+<button className='bg-gradient-to-br from-s-gradiant to-e-gradiant px-6 py-2 h-[44px] rounded-md text-heading font-medium w-full'> 
 {children}
 </button>
 )

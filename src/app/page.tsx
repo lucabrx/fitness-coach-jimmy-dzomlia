@@ -1,6 +1,7 @@
 import ExpertCard from '@/components/ExpertCard'
 import HeroContent from '@/components/HeroContent'
 import Navbar from '@/components/Navbar'
+import PremiumCard from '@/components/PremiumCard'
 import ReviewCard from '@/components/ReviewCard'
 import Image from 'next/image'
 
@@ -13,7 +14,7 @@ export default function Home() {
           <HeroContent />
         </div>
         <div className='px-10'>
-        <ExpertCard />
+        <PremiumCard />
 
         </div>
       </div>

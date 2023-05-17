@@ -7,7 +7,7 @@ interface ExpertCardProps {
 
 const ExpertCard: FC<ExpertCardProps> = ({}) => {
   return (
-<div className='relative w-[328px] h-[300px] md:w-[392px] rounded-lg flex justify-center items-center'> 
+<div className='relative  w-full max-w-[392px] rounded-lg flex justify-center items-center'> 
 <Image
 className='absolute inset-0 rounded-lg'
 src='/cardio.png'
