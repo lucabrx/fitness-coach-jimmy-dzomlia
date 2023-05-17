@@ -1,3 +1,4 @@
+import ExpertCard from '@/components/ExpertCard'
 import HeroContent from '@/components/HeroContent'
 import Navbar from '@/components/Navbar'
 import ReviewCard from '@/components/ReviewCard'
@@ -12,7 +13,7 @@ export default function Home() {
           <HeroContent />
         </div>
         <div className='px-10'>
-        <ReviewCard />
+        <ExpertCard />
 
         </div>
       </div>
