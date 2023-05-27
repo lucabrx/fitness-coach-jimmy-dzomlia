@@ -2,33 +2,33 @@ import Image from 'next/image';
 import { type FC } from 'react';
 
 interface ReviewCardProps {
-  
+    title: string;
+    desc: string;
+    name: string; 
+    image: string;
 }
 
-const ReviewCard: FC<ReviewCardProps> = ({}) => {
+const ReviewCard: FC<ReviewCardProps> = ({title,desc,name,image}) => {
   return (
-<div className='w-[286px] h-[250px] rounded-lg bg-card p-6 flex flex-col justify-between'> 
-<h2 className='text-xl font-medium text-heading'>Very Good</h2>
+<div className='xl:w-[286px] w-full h-[250px] rounded-lg bg-card p-6 flex flex-col justify-between'> 
+<h2 className='text-xl font-medium text-heading'>{title}</h2>
 
 <p className='text-base text-text'>
-Jimmy changed my life 
-with his very good traning 
-methods i losed 30kg in
-2 days, worth every penny
+{desc}
 </p>
 
 <div className='w-full flex gap-4'>
     <div className='relative w-[42px] h-[42px] flex'>
         <Image 
-        src="/person1.png"
+        src={image}
         alt="person"
         fill
-        className='rounded-full'
+        className='rounded-full  object-center'
         />
     </div>
 
     <div className='flex-col justify-start items-start flex'>
-        <p className='text-base text-heading'>Jimmy Kreso</p>
+        <p className='text-base text-heading'>{name}</p>
 
         <div className='flex gap-2 items-center justify-center'>
         <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -14,6 +14,10 @@ module.exports = {
         "card" : "#141414",
         "s-gradiant" : "#FC575E",
         "e-gradiant" : "#F7512C",
+     },
+     screens: {
+      "maxXS": "1240px",
+      "xxl" : "1560px"
      }
     },
   },

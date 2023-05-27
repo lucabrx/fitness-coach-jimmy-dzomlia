@@ -31,13 +31,13 @@ Health is something we need to care of. <br/>
 Exercise is a key for a healthy body.   
 Exercising makes your life happy. 
 </p>
-
-<div className='w-full flex justify-center pt-2'>
-<Button>
+<div className='w-full justify-center flex'>
+<div className='w-[130px] flex justify-center pt-2'>
+<Button >
     Join Now
 </Button>
 </div>
-
+</div>
 </div>
 )
 }
