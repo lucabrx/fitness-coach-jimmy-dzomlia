@@ -1,6 +1,9 @@
+import AboutPart from '@/components/AboutPart'
+import ExpertCard from '@/components/ExpertCard'
 import HeroContent from '@/components/HeroContent'
 import Navbar from '@/components/Navbar'
 import ReviewCard from '@/components/ReviewCard'
+import SkillPart from '@/components/SkillPart'
 
 export default function Home() {
   return (
@@ -44,9 +47,26 @@ export default function Home() {
         />
       </div>
         
-        </div>
       </div>
-     
+      </div>
+     <AboutPart />
+      
+      <div className='bg-card w-full flex justify-center items-center'>
+      <div className='flex flex-col justify-center items-center flex-wrrap md:flex-row maxXS:justify-between px-4 maxXS:px-0  py-8 gap-6 max-w-[1240px]'>
+        <ExpertCard
+        title="Weight Lifting"
+        img='/gym.png'
+        />
+        <ExpertCard
+        title="Functional Training"
+        img='/functional.png'
+        />
+        <ExpertCard 
+        title="Cardio"
+        img='/cardio.png'
+        />
+      </div>
+      </div>
      
 
       
