@@ -2,8 +2,10 @@ import AboutPart from '@/components/AboutPart'
 import ExpertCard from '@/components/ExpertCard'
 import HeroContent from '@/components/HeroContent'
 import Navbar from '@/components/Navbar'
+import PremiumCard from '@/components/PremiumCard'
 import ReviewCard from '@/components/ReviewCard'
 import SkillPart from '@/components/SkillPart'
+import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -66,6 +68,26 @@ export default function Home() {
         img='/cardio.png'
         />
       </div>
+      </div>
+
+      <div className='pt-4 px-4 max-w-[1240px] md:pt-6'>
+      <h2 className='font-bold text-[28px] leading-[38px] text-heading text-left md:text-center pb-2 md:pb-4'>
+      Join now and be better <span className='bg-clip-text bg-gradient-to-br from-s-gradiant to-e-gradiant text-transparent'>Tomorrow</span>
+      </h2>
+
+      <div className='grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-4 md:items-start '>
+         <PremiumCard />
+        
+        <div className='h-full w-full md:max-h-[304px]'>
+        <Image
+          src='/subscription.png'
+          alt='home2'
+          width={500}
+          height={500}
+          className='object-cover aspect-video'
+          />
+          </div>
+         </div>
       </div>
      
 

@@ -25,7 +25,7 @@ const PremiumCard: FC<PremiumCardProps> = ({}) => {
 </div>
 </div>
 
-<div className='w-full flex items-center justify-center mb-2 bg-blue-500'>
+<div className='w-full flex items-center justify-center mb-2'>
 <Button>
     Be Awesome
 </Button>
