@@ -1,5 +1,9 @@
+import Hydrate from '@/components/Hydrate'
 import './globals.css'
 import { Inter } from 'next/font/google'
+import RegisterModal from '@/components/modal/RegisterModal'
+import Providers from '@/components/Providers'
+import LoginModal from '@/components/modal/LoginModal'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,9 +20,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <Providers>
       <div className='bg-bg'>
+      <Hydrate>
+        <RegisterModal />
+        <LoginModal />
+      </Hydrate>
       {children}
       </div>  
+      </Providers>
       </body>
     </html>
   )

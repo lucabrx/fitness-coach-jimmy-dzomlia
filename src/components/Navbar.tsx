@@ -1,14 +1,17 @@
+"use client"
 import { Menu } from 'lucide-react';
 import Link from 'next/link';
 import { type FC } from 'react';
 import Button from './Button';
 import NavbarLinks from './navbar/NavbarLinks';
+import useLoginModal from '@/hooks/useLoginModal';
 
 interface NavbarProps {
   
 }
 
 const Navbar: FC<NavbarProps> = ({}) => {
+  const loginModal = useLoginModal()
   return (
 <div className='w-full justify-center flex'>
     <div className='max-w-[1240px] w-full flex justify-between items-center px-4 py-2'>
@@ -19,8 +22,10 @@ const Navbar: FC<NavbarProps> = ({}) => {
         <NavbarLinks />
 
         <div className='hidden md:block'>
-        <Button>
-        Login
+        <Button
+        onClick={loginModal.onOpen}
+        >
+        Sign Up
         </Button>
         </div>
     </div>
