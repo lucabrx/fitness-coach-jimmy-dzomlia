@@ -5,13 +5,17 @@ import { type FC } from 'react';
 import Button from './Button';
 import NavbarLinks from './navbar/NavbarLinks';
 import useLoginModal from '@/hooks/useLoginModal';
+import { User } from '@prisma/client';
+import ShouldRender from './ShouldRender';
+import { signOut } from 'next-auth/react';
 
 interface NavbarProps {
-  
+  session: User | null
 }
 
-const Navbar: FC<NavbarProps> = ({}) => {
+const Navbar: FC<NavbarProps> = ({session}) => {
   const loginModal = useLoginModal()
+  
   return (
 <div className='w-full justify-center flex'>
     <div className='max-w-[1240px] w-full flex justify-between items-center px-4 py-2'>
@@ -22,11 +26,19 @@ const Navbar: FC<NavbarProps> = ({}) => {
         <NavbarLinks />
 
         <div className='hidden md:block'>
+        <ShouldRender if={!session}>
         <Button
         onClick={loginModal.onOpen}
         >
         Sign Up
         </Button>
+        </ShouldRender>
+        <ShouldRender if={session}>
+          <Button 
+          onClick={() => signOut()}>
+            Logout
+          </Button>
+        </ShouldRender>
         </div>
     </div>
 </div>
