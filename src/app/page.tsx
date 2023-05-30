@@ -1,9 +1,12 @@
 import AboutPart from '@/components/AboutPart'
 import ExpertCard from '@/components/ExpertCard'
+import ExpertContainer from '@/components/ExpertContainer'
+import Footer from '@/components/Footer'
 import HeroContent from '@/components/HeroContent'
 import Navbar from '@/components/Navbar'
 import PremiumCard from '@/components/PremiumCard'
-import ReviewCard from '@/components/ReviewCard'
+import ReviewsContainer from '@/components/ReviewsContainer'
+import SubscriptionsContainer from '@/components/SubscriptionsContainer'
 import getCurrentUser from '@/utils/getSession'
 import Image from 'next/image'
 
@@ -19,82 +22,11 @@ export default async function Home() {
           <HeroContent />
         </div>
         </div>
-        <div className='flex w-full justify-center'>
-        <div className='grid grid-cols-1 px-4 md:grid-cols-2 gap-4  lg:grid-cols-3 xl:grid-cols-4 max-w-[1240px] justify-center items-center relative -top-24 lg:-top-36'>
-       
-        <ReviewCard 
-        name='Rokas Pusktas'
-        image='/person2.jpg'
-        desc='Very good trainer, helped me to achieve my goals, thank u mister Jimmy a lot. I am very happy with the results'
-        title='Amazing!!!'
-        />
-       
-        <ReviewCard 
-        name='Milena Dravic'
-        image='/person4.jpg'
-        desc='I cant find a word how to describe amazing work of mister Jimmy he is just great motivatior and he can achive your goals'
-        title='5 stars'
-        />
-       
-        <ReviewCard 
-        name="Michael O'Connel"
-        image='/person3.jpg'
-        desc='I am very happy with the results, I have lost 10kg in 2 months, I am very happy with the results, I have lost 10kg in 2 months'
-        title='Very good'
-        />
-       
-        <div className='lg:hidden xl:block'>
-        <ReviewCard
-        name="Anna Lopes"
-        image='/person1.png'
-        desc='I am very happy with the results, I train hard and I enjoyed a lot this is amazing. U need to try it'
-        title='Just WOOW!!!'
-        />
-      </div>
-        
-      </div>
-      </div>
-     <AboutPart />
-      
-      <div className='bg-card w-full flex justify-center items-center'>
-      <div className='flex flex-col justify-center items-center flex-wrrap md:flex-row maxXS:justify-between px-4 maxXS:px-0  py-8 gap-6 max-w-[1240px]'>
-        <ExpertCard
-        title="Weight Lifting"
-        img='/gym.png'
-        />
-        <ExpertCard
-        title="Functional Training"
-        img='/functional.png'
-        />
-        <ExpertCard 
-        title="Cardio"
-        img='/cardio.png'
-        />
-      </div>
-      </div>
-
-      <div className='pt-4 px-4 max-w-[1240px] md:pt-6'>
-      <h2 className='font-bold text-[28px] leading-[38px] text-heading text-left md:text-center pb-2 md:pb-4'>
-      Join now and be better <span className='bg-clip-text bg-gradient-to-br from-s-gradiant to-e-gradiant text-transparent'>Tomorrow</span>
-      </h2>
-
-      <div className='grid grid-cols-1 lg:grid-cols-2 justify-center items-center gap-4 md:items-start '>
-         <PremiumCard />
-        
-        <div className='h-full w-full md:max-h-[304px]'>
-        <Image
-          src='/subscription.png'
-          alt='home2'
-          width={500}
-          height={500}
-          className='object-cover aspect-video'
-          />
-          </div>
-         </div>
-      </div>
-     
-
-      
+      <ReviewsContainer />
+      <AboutPart />
+      <ExpertContainer />
+      <SubscriptionsContainer /> 
+      <Footer />
     </div>
   )
 }

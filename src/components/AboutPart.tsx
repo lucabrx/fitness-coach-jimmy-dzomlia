@@ -1,13 +1,39 @@
+"use client"
 import Image from 'next/image';
-import { type FC } from 'react';
+import { useEffect, type FC } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
 
 interface AboutPartProps {
   
 }
 
 const AboutPart: FC<AboutPartProps> = ({}) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: true, 
+    rootMargin: '-100px 0px', 
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [controls, inView]);
+
   return (
-<div className='flex flex-col md:flex-row justify-center items-center md:items-start md:justify-between  -mt-20 px-4 max-w-[1240px] '> 
+<motion.div 
+ ref={ref}
+ initial="hidden"
+ animate={controls}
+ variants={{
+   visible: { opacity: 1 },
+   hidden: { opacity: 0 },
+ }}
+ transition={{ duration: 2, ease: 'easeInOut' }}
+ id="about"
+className='flex flex-col md:flex-row justify-center items-center md:items-start md:justify-between  -mt-20 px-4 max-w-[1240px] '> 
 <div className='flex flex-col space-y-4 md:w-[50%] md:mt-6'>
     <h2 className='font-bold text-2xl text-heading w-full text-left'>Meet your coach?</h2>
     <p className='text-text'>As a dedicated fitness coach, my mission is to empower individuals to achieve their health and wellness goals through personalized training, guidance, and support.
@@ -32,7 +58,7 @@ const AboutPart: FC<AboutPartProps> = ({}) => {
     height={548}
     className='mt-4'
     />
-</div>
+</motion.div>
 )
 }
 

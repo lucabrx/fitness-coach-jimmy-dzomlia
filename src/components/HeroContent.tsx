@@ -1,14 +1,18 @@
+"use client"
 import { type FC } from 'react';
 import Button from './Button';
+import { motion } from 'framer-motion';
 
-interface HeroContentProps {
-  
-}
-
-const HeroContent: FC<HeroContentProps> = ({}) => {
+const HeroContent: FC = ({}) => {
   return (
-<div className='flex flex-col justify-center px-4 w-full space-y-2 pt-[48px] md:pt-[140px]'> 
-<h2 className='font-bold text-[32px] leading-[38px] text-heading text-center block md:hidden'>
+<motion.div 
+initial={{ opacity: 0 }}
+animate={{ opacity: 1 }}
+transition={{ duration: 2, ease: 'easeInOut' }}
+
+className='flex flex-col justify-center px-4 w-full space-y-2 pt-[48px] md:pt-[140px]'> 
+<h2
+className='font-bold text-[32px] leading-[38px] text-heading text-center block md:hidden'>
 Push harder <br/>
 today if You Want a <br />
 <span className='bg-clip-text bg-gradient-to-br from-s-gradiant to-e-gradiant text-transparent'>Different Tomorrow</span>
@@ -38,7 +42,7 @@ Exercising makes your life happy.
 </Button>
 </div>
 </div>
-</div>
+</motion.div>
 )
 }
 
